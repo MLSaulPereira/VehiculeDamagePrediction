@@ -1,0 +1,45 @@
+# ==========================================
+# Python & Environment
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+ENV/
+
+# ==========================================
+# Jupyter Notebooks
+# ==========================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ==========================================
+# Datasets & Training Images (HUGE FOLDERS)
+# ==========================================
+# Replace these with the actual names of your dataset folders if they are inside this directory
+dataset/
+data/
+images/
+train/
+test/
+val/
+*.zip
+
+# ==========================================
+# Large Model Weights
+# ==========================================
+# Uncomment the line below if save_model.pth is larger than 100MB
+# model/save_model.pth
+
+# ==========================================
+# Streamlit & Temporary Files
+# ==========================================
+temp_file.jpg
+.DS_Store
+
+# ==========================================
+# Other local files (not needed on GitHub)
+# ==========================================
+Other Files/
