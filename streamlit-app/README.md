@@ -70,3 +70,75 @@ vehicle-damage-detection/
 └── README.md
 
 ```
+
+⚙️ Installation
+
+1. Clone the repository
+   bash
+   git clone https://github.com/MLSaulPereira/VehiculeDamagePrediction.git
+   cd VehiculeDamagePrediction
+2. Create a virtual environment (recommended)
+   bash
+   python -m venv venv
+   source venv/bin/activate # Linux / macOS
+   venv\Scripts\activate # Windows
+3. Install dependencies
+   bash
+   pip install -r requirements.txt
+   requirements.txt:
+
+txt
+streamlit==1.63.0
+Pillow==12.3.0
+torch==2.15.0
+torchvision==0.29.2
+💡 For GPU acceleration, install the CUDA-enabled version of PyTorch from pytorch.org.
+
+🚀 Running the App
+Since the application code is located inside the streamlit-app directory, navigate into it first:
+
+bash
+cd streamlit-app
+streamlit run app.py
+Then open the URL shown in the terminal (usually http://localhost:8501).
+
+How to Use
+Launch the app.
+
+Upload a .jpg or .png image of a vehicle.
+
+The app displays the uploaded image and the predicted damage class below it.
+
+Example flow:
+
+text
+Upload Image → Preprocess (224×224, normalize) → ResNet-50 → Softmax → Class Label
+🛠️ Tech Stack
+Component Technology
+Frontend Streamlit
+Deep Learning PyTorch + Torchvision
+Model ResNet-50 (transfer learning)
+Image Processing Pillow (PIL)
+🐞 Known Limitations
+The model is trained on a limited dataset (2,300 images); accuracy may drop on low-quality, poorly lit, or unusual-angle photos.
+
+Only 6 classes are supported (front/rear breakage, crushed, normal).
+
+The uploaded file is saved temporarily as temp_file.jpg — for multi-user deployment, consider using an in-memory buffer (io.BytesIO) instead.
+
+👤 Author
+Saul Pereira
+
+GitHub: @MLSaulPereira
+
+📄 License
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+🙏 Acknowledgements
+PyTorch
+
+Torchvision
+
+Streamlit
+
+Pretrained ResNet-50 weights from ImageNet
